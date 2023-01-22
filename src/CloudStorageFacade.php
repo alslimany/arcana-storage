@@ -30,7 +30,7 @@ class CloudStorageFacade extends Facade
 
         $response = $client->request(
             'POST',
-            config('config.url'),
+            config('url'),
             [
                 'multipart' => [
                     [
