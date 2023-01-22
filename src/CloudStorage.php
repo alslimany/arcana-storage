@@ -28,7 +28,7 @@ class CloudStorage
             'POST',
             // config('config.url') . '/file',
             // config('url') . 'api/file',
-            'http://archive.arcana.ly/api/file',
+            'https://archive.arcana.ly/api/file',
             [
                 'form_params' => [
                 'files' => $files_to_upload,
