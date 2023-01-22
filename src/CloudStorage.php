@@ -27,7 +27,7 @@ class CloudStorage
         $response = $client->request(
             'POST',
             // config('config.url') . '/file',
-                'http://arcana-archive-tenancy.test/api/file',
+            config('config.url') . 'api/file',
             [
                 'form_params' => [
                 'files' => $files_to_upload,
