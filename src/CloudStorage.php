@@ -27,7 +27,7 @@ class CloudStorage
         $response = $client->request(
             'POST',
             // config('config.url') . '/file',
-            config('config.url') . 'api/file',
+            config('url') . 'api/file',
             [
                 'form_params' => [
                 'files' => $files_to_upload,

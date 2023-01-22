@@ -2,8 +2,8 @@
 
 namespace Arcana\CloudStorage;
 
-use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Facade;
+use GuzzleHttp\Client;
 
 /**
  * @see \Arcana\CloudStorage\Skeleton\SkeletonClass
@@ -30,18 +30,18 @@ class CloudStorageFacade extends Facade
 
         $response = $client->request(
             'POST',
-            config('url'),
+            config('config.url'),
             [
-                'multipart' => [
-                    [
-                        'name' => 'file',
-                        'contents' => $content,
-                        'filename' => 'image.jpg',
-                        // 'headers'  => [
-                        //     'X-Foo' => 'this is an extra header to include'
-                        // ]
-                    ],
-                ],
+            'multipart' => [
+                [
+                    'name'     => 'file',
+                    'contents' => $content,
+                    'filename' => 'image.jpg',
+                    // 'headers'  => [
+                    //     'X-Foo' => 'this is an extra header to include'
+                    // ]
+                ]
+            ]
             ]
         );
 
