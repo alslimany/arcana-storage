@@ -26,9 +26,7 @@ class CloudStorage
 
         $response = $client->request(
             'POST',
-            // config('config.url') . '/file',
-            // config('url') . 'api/file',
-            'https://archive.arcana.ly/api/file',
+            config('arcana-storage.url') . '/api/file',
             [
                 'form_params' => [
                 'files' => $files_to_upload,
@@ -52,8 +50,7 @@ class CloudStorage
     {
         $client = new Client();
 
-        // $response = $client->request('get', 'http://arcana-archive-tenancy.test/api/get-file', [ 'query' => ['uuid' => $uuid]]);
-        $response = $client->request('get', config('url') . 'api/file/' . $uuid);
+        $response = $client->request('get', config('arcana-storage.url') . '/api/file/' . $uuid);
 
         $body = json_decode($response->getBody()->getContents());
 
